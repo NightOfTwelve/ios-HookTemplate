@@ -1,0 +1,78 @@
+////#import <libobjc.A.dylib/SSURLConnectionRequestDelegate.h>
+#import <StoreServices/SSURLConnectionRequest.h>
+#import <StoreServices/SSItemOffer.h>
+#import <StoreServices/SSItemImageCollection.h>
+@interface SSItem : NSObject
+-(void)_setExpirationDate:(id)date ;
+-(id)podcastFeedURL;
+-(id)preOrderIdentifier;
+-(id)artistIdentifier;
+-(id)collectionArtistName;
+-(id)collectionIndexInCollectionGroup;
+-(id)episodeIdentifier;
+-(id)episodeSortIdentifier;
+-(id)genreIdentifier;
+-(id)networkName;
+-(id)numberOfCollectionsInCollectionGroup;
+-(id)numberOfItemsInCollection;
+-(id)podcastEpisodeGUID;
+-(id)videoDetails;
+-(SSItemImageCollection *)imageCollection;
+-(id)rawItemDictionary;
+-(id)itemOfferForIdentifier:(id)identifier ;
+-(void)urlConnectionRequest:(id)request didReceiveResponse:(id)response ;
+-(id)_offers;
+-(id)_tellAFriendDictionary;
+-(void)_finishTellAFriendLoadWithError:(id)error ;
+-(NSArray *)allItemOffers;
+-(void)loadTellAFriendMessageWithCompletionHandler:(/*^block*/id)handler ;
+-(long long)numberOfPrintedPages;
+-(NSArray *)thumbnailImages;
+-(NSURL *)viewItemURL;
+-(id)sendGiftURL;
+-(id)viewReviewsURL;
+-(void)dealloc;
+-(NSString *)description;
+-(id)bundleIdentifier;
+-(NSString *)itemTitle;
+-(id)shortDescription;
+-(id)valueForProperty:(id)property ;
+-(NSDate *)expirationDate;
+-(BOOL)isRestricted;
+-(id)bundleVersion;
+-(id)seriesName;
+-(id)composerName;
+-(BOOL)isCompilation;
+-(id)releaseDate;
+-(void)request:(id)request didFailWithError:(id)error ;
+-(void)requestDidFinish:(id)finish ;
+-(id)seasonNumber;
+-(id)longDescription;
+-(id)collectionIdentifier;
+-(float)averageUserRating;
+-(id)softwareType;
+-(id)priceDisplay;
+-(id)initWithItemDictionary:(id)dictionary ;
+-(id)playableMedia;
+-(id)mediaKind;
+-(id)relatedItemsForRelationType:(id)type ;
+-(id)tellAFriendBody;
+-(id)tellAFriendBodyMIMEType;
+-(id)tellAFriendBodyURL;
+-(id)tellAFriendSubject;
+-(id)tweetInitialText;
+-(id)tweetURL;
+-(BOOL)isGameCenterEnabled;
+-(id)genreName;
+-(id)buyParameters;
+-(NSString *)itemKind;
+-(NSString *)artistName;
+-(id)collectionName;
+-(long long)numberOfUserRatings;
+-(id)releaseDateString;
+-(NSNumber *)ITunesStoreIdentifier;
+-(id)contentRating;
+-(BOOL)isHighDefinition;
+-(id)indexInCollection;
+-(SSItemOffer *)defaultItemOffer;
+@end

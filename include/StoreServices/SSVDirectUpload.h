@@ -1,0 +1,33 @@
+////#import <libobjc.A.dylib/SSXPCCoding.h>
+@interface SSVDirectUpload : NSObject
+-(void)_adoptStatusFromUpload:(id)upload ;
+-(long long)countOfBytesExpectedToSend;
+-(void)setCountOfBytesExpectedToSend:(long long)send ;
+-(void)setCountOfBytesSent:(long long)sent ;
+-(void)setPersistentIdentifier:(long long)identifier ;
+-(NSString *)_uploadKind;
+-(void)_setUploadKind:(id)kind ;
+-(void)setTitle:(NSString *)title ;
+-(BOOL)isEqual:(id)equal ;
+-(unsigned long long)hash;
+-(NSString *)description;
+-(long long)state;
+-(void)setState:(long long)state ;
+-(NSString *)title;
+-(void)setSubtitle:(NSString *)subtitle ;
+-(NSString *)subtitle;
+-(NSString *)UTI;
+-(void)setUTI:(NSString *)i ;
+-(BOOL)isExplicitContent;
+-(void)setExplicitContent:(BOOL)content ;
+-(id)copyXPCEncoding;
+-(id)initWithXPCEncoding:(id)encoding ;
+-(long long)persistentIdentifier;
+-(NSString *)categoryName;
+-(void)setCategoryName:(NSString *)name ;
+-(void)setThumbnailImageURL:(NSURL *)l ;
+-(NSURL *)thumbnailImageURL;
+-(NSError *)error;
+-(void)setError:(NSError *)error ;
+-(long long)countOfBytesSent;
+@end

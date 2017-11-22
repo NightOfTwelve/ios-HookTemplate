@@ -1,0 +1,26 @@
+@interface SSAuthenticationResponse : NSObject
+-(BOOL)isNewCustomer;
+-(long long)availableServiceTypes;
+-(id)initWithURLResponse:(id)response dictionary:(id)dictionary ;
+-(id)newAccount;
+-(NSNumber *)failureType;
+-(NSNumber *)accountUniqueIdentifier;
+-(BOOL)isManagedStudent;
+-(long long)_responseTypeForFailureType:(long long)type ;
+-(long long)_responseTypeForErrorNumber:(long long)number ;
+-(long long)_responseTypeForStatusValue:(long long)value ;
+-(void)dealloc;
+-(NSString *)token;
+-(long long)responseType;
+-(NSString *)userMessage;
+-(long long)accountKind;
+-(long long)enabledServiceTypes;
+-(id)_valueForFirstAvailableKey:(id)key ;
+-(void)setURLBagType:(long long)type ;
+-(long long)URLBagType;
+-(NSDictionary *)responseDictionary;
+-(NSString *)accountName;
+-(NSHTTPURLResponse *)URLResponse;
+-(NSString *)storeFrontIdentifier;
+-(NSString *)creditsString;
+@end

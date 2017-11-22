@@ -1,0 +1,46 @@
+//#import <StoreServices/StoreServices-Structs.h>
+////#import <libobjc.A.dylib/NSCopying.h>
+@interface SSWatchMetricsEvent : NSObject
+-(void)setAppExternalVersionID:(NSNumber *)d ;
+-(void)setAppExtensionVersion:(NSString *)version ;
+-(void)setCohortID:(NSString *)d ;
+-(void)setDownloadVarietyID:(NSString *)d ;
+-(void)setInstallType:(unsigned long long)type ;
+-(void)setPurchaserDsid:(NSNumber *)dsid ;
+-(void)setUserDsid:(NSNumber *)dsid ;
+-(void)setWatchGuid:(NSString *)guid ;
+-(void)setWatchSerial:(NSString *)serial ;
+-(NSString *)appExtensionVersion;
+-(NSNumber *)appExternalVersionID;
+-(NSString *)cohortID;
+-(NSString *)downloadVarietyID;
+-(unsigned long long)installType;
+-(NSNumber *)purchaserDsid;
+-(NSNumber *)userDsid;
+-(NSString *)watchGuid;
+-(NSString *)watchSerial;
+-(id)_appCohortID:(id)d ;
+-(id)financeDictionaryRepresentation;
+-(id)init;
+-(id)initWithDictionary:(id)dictionary ;
+-(NSDate *)timestamp;
+-(NSString *)bundleIdentifier;
+-(void)setTimestamp:(NSDate *)timestamp ;
+-(id)copyWithZone:(NSZone*)zone ;
+-(NSString *)model;
+-(id)dictionaryRepresentation;
+-(unsigned long long)eventType;
+-(void)setBundleIdentifier:(NSString *)identifier ;
+-(void)setEventType:(unsigned long long)type ;
+-(NSString *)osVersion;
+-(void)setOsVersion:(NSString *)version ;
+-(void)setAdamId:(NSNumber *)id ;
+-(void)setPid:(NSNumber *)pid ;
+-(NSString *)versionString;
+-(void)setVersionString:(NSString *)string ;
+-(void)setModel:(NSString *)model ;
+-(NSString *)watchSize;
+-(NSNumber *)pid;
+-(NSNumber *)adamId;
+-(void)setWatchSize:(NSString *)size ;
+@end

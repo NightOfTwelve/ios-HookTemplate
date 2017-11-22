@@ -1,0 +1,40 @@
+//#import <StoreServices/StoreServices-Structs.h>
+@interface SSSQLiteDatabase : NSObject
++(BOOL)statementDidFinishAfterStepping:(void* /* sqlite3_stmtRef */)stepping ;
++(BOOL)statementHasRowAfterStepping:(void* /* sqlite3_stmtRef */)stepping ;
++(void)_stepStatement:(void* /* sqlite3_stmtRef */)statement hasRow:(BOOL*)row didFinish:(BOOL*)finish isCorrupt:(BOOL*)corrupt ;
++(void)_setTakesTaskCompletionAssertions:(BOOL)assertions ;
+-(BOOL)statementDidFinishAfterStepping:(void* /* sqlite3_stmtRef */)stepping ;
+-(void)prepareStatementForSQL:(id)l cache:(BOOL)cache usingBlock:(/*^block*/id)block ;
+-(BOOL)statementHasRowAfterStepping:(void* /* sqlite3_stmtRef */)stepping ;
+-(long long)countChanges;
+-(void)setSetupBlock:(id)block ;
+-(id)initWithDatabaseURL:(id)l readOnly:(BOOL)only ;
+-(void)dispatchBlockAsync:(/*^block*/id)async ;
+-(void)_beginTaskCompletionAssertion;
+-(void)_endTaskCompletionAssertion;
+-(void)_accessDatabaseUsingBlock:(/*^block*/id)block ;
+-(void)_resetCorruptDatabase;
+-(void* /* sqlite3_stmtRef */)_statementForSQL:(id)l cache:(BOOL)cache ;
+-(BOOL)setUserVersion:(long long)version forDatabase:(id)database ;
+-(long long)userVersionForDatabase:(id)database ;
+-(int)_openFlags;
+-(int)_resetAndReopenDatabaseWithPath:(id)path ;
+-(BOOL)_resetDatabaseWithPath:(id)path ;
+-(void)dispatchAfter:(unsigned long long)after block:(/*^block*/id)block ;
+-(void)dispatchBlockSync:(/*^block*/id)sync ;
+-(id)newDispatchSourceWithType:(void* /* dispatch_source_type_sRef */)type ;
+-(void)beginTaskCompletionAssertion;
+-(void)endTaskCompletionAssertion;
+-(void)setTakesTaskCompletionAssertions:(BOOL)assertions ;
+-(BOOL)takesTaskCompletionAssertions;
+-(id)setupBlock;
+-(void)dealloc;
+-(id)initWithDatabaseURL:(id)l ;
+-(int)_openDatabase;
+-(void)performTransactionWithBlock:(/*^block*/id)block ;
+-(BOOL)executeSQL:(id)l ;
+-(BOOL)setUserVersion:(long long)version ;
+-(long long)userVersion;
+-(void)accessDatabaseUsingBlock:(/*^block*/id)block ;
+@end
