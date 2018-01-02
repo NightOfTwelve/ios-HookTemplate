@@ -6,17 +6,32 @@
 //  Copyright © 2017年 lm mac mini1. All rights reserved.
 //
 
+// 这里通过定义SBLockScreenManagerProtocol来解决引用私有头文件这一麻烦问题。
+
 #import "Tweak.h"
 
-MSHookInterface(SSMetricsController, SSMetricsControllerHook, SSMetricsController);
+@protocol SBLockScreenManagerProtocol
 
-@implementation SSMetricsControllerHook
+-(void)unlockUIFromSource:(int)arg1 withOptions:(id)arg2;
 
--(void)insertEvent:(id)event withCompletionHandler:(id)handler
+- (void)lockUIFromSource:(int)arg1 withOptions:(id)arg2;
+
+@end
+
+MSHookInterface(SBLockScreenManager, SBLockScreenManagerHook, NSObject<SBLockScreenManagerProtocol>);
+
+@implementation SBLockScreenManagerHook
+
+- (void)unlockUIFromSource:(int)arg1 withOptions:(id)arg2
 {
-    [super insertEvent:event withCompletionHandler:handler];
-    
-    NSLog(@"[iosHook] insertEvent");
+    NSLog(@"unlockUIFromSource :%d  %@",arg1 ,arg2);
+    return [super unlockUIFromSource:arg1 withOptions:arg2];
+}
+
+- (void)lockUIFromSource:(int)arg1 withOptions:(id)arg2
+{
+    NSLog(@"lockUIFromSource :%d  %@",arg1 ,arg2);
+    return [super lockUIFromSource:arg1 withOptions:arg2];
 }
 
 @end
@@ -24,6 +39,4 @@ MSHookInterface(SSMetricsController, SSMetricsControllerHook, SSMetricsControlle
 MSInitialize
 {
     NSLog(@"[iosHook] start");
-    
-    
 }

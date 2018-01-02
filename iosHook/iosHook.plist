@@ -6,8 +6,7 @@
 	<dict>
 		<key>Executables</key>
 		<array>
-			<string>AppStore</string>
-			<string>itunesstored</string>
+			<string>SpringBoard</string>
 		</array>
 	</dict>
 </dict>
